@@ -1,0 +1,268 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: url(https://media.giphy.com/media/Jn7oM8FYWXqMnZWpoH/source.gif)
+    no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+}
+
+.content-holder {
+  margin-top: 62px;
+  width: 440px;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-areas:
+    "one"
+    "two"
+    "three";
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  padding: 10px;
+
+  /* glassmorphism */
+  background: rgba(15, 14, 15, 0.6);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
+  border-radius: 0px;
+  border: 0;
+}
+
+.rotate {
+  text-transform: uppercase;
+  padding: 10px 20px;
+  background: rgba(15, 14, 15, 0.9);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
+  border-radius: 0px;
+  border: 0;
+}
+
+.header-holder {
+  border-bottom: 2px solid rgb(151, 5, 151);
+  position: fixed;
+  z-index: 1;
+  width: 440px;
+}
+
+/* for tiny screens */
+@media screen and (max-width: 440px) {
+  .header-holder {
+    width: 100vw;
+  }
+
+  .content-holder {
+    width: 100vw;
+  }
+}
+
+/* for mobile */
+@media screen and (max-width: 1500px) {
+  .ball {
+    display: none;
+  }
+}
+
+/* for desktop */
+@media screen and (min-width: 1362px) {
+  .header-holder {
+    border-bottom: 0;
+    position: unset;
+  }
+  .content-holder {
+    border-radius: 10px;
+    width: 1360px;
+    display: grid;
+    grid-template-areas: "one two three";
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    border: 2px solid rgb(151, 5, 151);
+  }
+
+  .rotate {
+    animation: move 10s linear infinite;
+    width: 300px;
+    border-radius: 10px;
+    border: 2px solid rgb(151, 5, 151);
+  }
+  .header-holder {
+    display: flex;
+    margin-bottom: 100px;
+    width: 1360px;
+  }
+
+  /* headings animatiion */
+  @keyframes move {
+    0% {
+      margin-left: 0;
+    }
+    50% {
+      margin-left: calc(1360px - 300px);
+    }
+    100% {
+      margin-left: 0;
+    }
+  }
+}
+
+.one {
+  grid-area: one;
+}
+.two {
+  grid-area: two;
+}
+.three {
+  grid-area: three;
+}
+
+.project-img {
+  background-size: cover;
+  background-position: center center;
+  height: 200px;
+  background-repeat: no-repeat;
+}
+
+.project-img-1 {
+  background-image: url(./images/Contact_Form.PNG);
+}
+
+.project-img-2 {
+  background-image: url(./images/Timeline.PNG);
+}
+
+.project-img-3 {
+  background-image: url(./images/Testimonials.PNG);
+}
+
+.project-text {
+  padding: 20px;
+  height: 122px;
+}
+
+.project-btn-holder {
+  display: flex;
+  justify-content: space-between;
+}
+
+.project-info {
+  padding: 10px;
+  height: 180px;
+
+  /* glassmorphism */
+  background: rgba(151, 5, 151, 0.4);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+.btn {
+  border-radius: 6px;
+  padding: 10px;
+  background: rgba(15, 14, 15, 0.9);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
+  cursor: pointer;
+  font-weight: bold;
+}
+.btn:hover {
+  background-color: black;
+
+  transition: 0.2s;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+}
+h2 {
+  text-align: center;
+}
+p {
+  text-align: center;
+}
+a {
+  text-decoration: unset;
+  color: white;
+  text-transform: uppercase;
+}
+
+.ball {
+  background: rgba(0, 115, 255, 0.5);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(2.5px);
+  -webkit-backdrop-filter: blur(2.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50px;
+  left: 50px;
+}
+
+.ball1 {
+  z-index: -1;
+  /* justify-self: flex-end; */
+  animation: moveball 6s linear infinite;
+}
+.ball2 {
+  z-index: -1;
+  animation: moveball 8s linear infinite;
+}
+.ball3 {
+  z-index: -1;
+  /* justify-self: flex-end; */
+  animation: moveball 10s linear infinite;
+}
+.ball4 {
+  z-index: -1;
+  animation: moveball 12s linear infinite;
+}
+
+@keyframes moveDown {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, 70vh);
+  }
+}
+
+@keyframes moveUp {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, -70vh);
+  }
+}
+
+@keyframes moveball {
+  0%,
+  100% {
+    transform: translate(10vw, 13vw);
+  }
+  25% {
+    transform: translate(80vw, 13vw);
+  }
+  50% {
+    transform: translate(80vw, 33vw);
+  }
+  75% {
+    transform: translate(10vw, 33vw);
+  }
+}
